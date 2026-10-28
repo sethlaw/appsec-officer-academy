@@ -246,6 +246,21 @@ footer { min-height: 56px; display: flex; justify-content: space-between; align-
 .score-orbit span { text-align: left; color: var(--cyan); font: .8rem var(--font-mono); text-transform: uppercase; }
 .officer-ctf-award { width: min(680px, calc(100vw - 2rem)); }
 .results-actions { margin-top: 1rem; }
+/* Community QR tiles: home channels and the results Meetup link. QR modules are black on
+   white, so the frame stays white on the dark theme or phones cannot scan them. */
+.qr-tile { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 1rem; align-items: center; min-width: 0; margin: 0; padding: .9rem; text-align: left; border: 1px solid var(--line); background: rgba(12,17,22,.55); }
+.qr-frame { display: block; padding: 10px; background: #fff; }
+.qr-frame img { display: block; width: 100%; height: auto; aspect-ratio: 1; }
+.qr-tile figcaption { min-width: 0; }
+.qr-tile strong { display: block; font: .9rem/1.25 var(--font-heading); text-transform: uppercase; letter-spacing: .03em; }
+.qr-tile p { margin: .4rem 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+.qr-tile small { display: block; margin-top: .45rem; color: var(--cyan); font: .6rem/1.4 var(--font-mono); overflow-wrap: anywhere; }
+.pro-bono-tile { align-items: start; }
+.community-links { max-width: 1180px; margin: -2rem auto 7rem; padding: 0 clamp(1rem, 4vw, 3rem); }
+.community-heading { padding-top: 2rem; border-top: 1px solid var(--line); }
+.community-heading h2 { margin: 0 0 1.25rem; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.1; }
+.community-row { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 1rem; }
+.results-meetup { width: min(420px, calc(100vw - 2rem)); grid-template-columns: 104px minmax(0, 1fr); margin: 0 0 1rem; }
 .result-detail { max-width: 1080px; margin: auto; padding: 5rem clamp(1rem, 4vw, 3rem) 7rem; }
 .result-row { display: grid; grid-template-columns: 100px 1fr; gap: 1.2rem; padding: 1.3rem; margin-bottom: .75rem; border: 1px solid var(--line); background: rgba(13,34,48,.7); }
 .result-row.correct { border-left: 4px solid var(--teal); }
@@ -345,6 +360,7 @@ footer { min-height: 56px; display: flex; justify-content: space-between; align-
   .mission-header { grid-template-columns: 1fr; }
   .classification { justify-self: start; }
   .officer-overview, .review-layout { grid-template-columns: 1fr; }
+  .community-row { grid-template-columns: 1fr; }
   .response-panel, .submit-panel { position: static; }
   .city-defense { grid-template-columns: 1fr; }
   .defense-brief { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -364,6 +380,8 @@ footer { min-height: 56px; display: flex; justify-content: space-between; align-
   .mission-objective > span { justify-self: start; }
   .order-card { grid-template-columns: repeat(2, 1fr); }
   .ctf-award { grid-template-columns: 1fr; }
+  .qr-tile { grid-template-columns: 104px minmax(0, 1fr); gap: .8rem; padding: .7rem; }
+  .qr-frame { padding: 7px; }
   .section-heading { display: block; }
   .section-heading p { margin-top: 1rem; }
   .progress-dots { gap: .25rem; }
